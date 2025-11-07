@@ -1,1 +1,10 @@
 services:
+  spring-jni:
+    image: 'cristiandanielcardona/conjuntos-jni:latest'
+    ports:
+      - '8081:8080'
+    networks:
+      - red-backend-app
+networks:
+  red-backend-app:
+    driver: bridge

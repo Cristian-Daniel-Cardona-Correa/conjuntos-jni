@@ -1,6 +1,7 @@
 package co.edu.uceva.conjuntosjni.controller;
 
 import co.edu.uceva.conjuntosjni.dto.ConjuntosRequest;
+import co.edu.uceva.conjuntosjni.dto.ElementoEnConjuntoRequest;
 import libconjuntos.lib.JavaConjuntos;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,10 @@ public class ConjuntosRestController {
     }
 
     @PostMapping("/esta-en-conjunto")
-    public boolean estaEnConjunto(@RequestBody int[] conjunto, @RequestParam int elemento) {
+    public boolean estaEnConjunto(@RequestBody ElementoEnConjuntoRequest request) {
+        int[] conjunto = request.getConjunto();
+        int elemento = request.getElemento();
+
         int resultado = miConjunto.estaEnConjunto(elemento, conjunto, conjunto.length);
         return resultado == 1;
     }
