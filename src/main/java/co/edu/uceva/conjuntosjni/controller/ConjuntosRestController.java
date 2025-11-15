@@ -5,6 +5,7 @@ import co.edu.uceva.conjuntosjni.dto.ElementoEnConjuntoRequest;
 import co.edu.uceva.conjuntosjni.service.ConjuntosService;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/conjuntos-jni")
 public class ConjuntosRestController {
